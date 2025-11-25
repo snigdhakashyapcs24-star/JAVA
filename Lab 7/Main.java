@@ -1,18 +1,18 @@
 import java.util.Scanner;
 
-// Custom Exception Class
+
 class WrongAge extends Exception {
-    WrongAge(String msg) {
-        super(msg);
+    WrongAge(String message) {
+        super(message);
     }
 }
 
-// InputScanner Class
+
 class InputScanner {
     Scanner s = new Scanner(System.in);
 }
 
-// Father Class
+
 class Father extends InputScanner {
     int fatherAge;
 
@@ -30,7 +30,7 @@ class Father extends InputScanner {
     }
 }
 
-// Son Class
+
 class Son extends Father {
     int sonAge;
 
@@ -52,16 +52,17 @@ class Son extends Father {
     }
 }
 
-// Main Class
+
 public class Main {
     public static void main(String[] args) {
         try {
             Son obj = new Son();
-            obj.displayFather();  // Show father’s age
-            obj.displaySon();     // Show son’s age
+            obj.displayFather();  
+            obj.displaySon();     
         }
         catch (WrongAge e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
 }
+
