@@ -1,0 +1,45 @@
+class Stack {
+    int[] stack;
+    int top;
+    int capacity;
+
+    
+    Stack(int size) {
+        capacity = size;
+        stack = new int[size];
+        top = -1;
+    }
+
+  
+    void push(int value) {
+        if (top == capacity - 1) {
+            System.out.println("Stack Overflow");
+        } else {
+            stack[++top] = value;
+            System.out.println("Pushed into stack: " + value);
+        }
+    }
+
+    
+    void pop() {
+        if (top == -1) {
+            System.out.println("Stack Underflow");
+        } else {
+            int popped = stack[top--];
+            System.out.println("Popped from stack: " + popped);
+        }
+    }
+}
+
+public class StackDemo {
+    public static void main(String[] args) {
+
+        Stack s = new Stack(2);
+
+        s.push(1);
+        s.push(2);
+        s.pop();
+        s.pop();
+        s.pop();   // Underflow
+    }
+}
